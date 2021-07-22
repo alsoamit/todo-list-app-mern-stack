@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "todo-list-mern-app",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
@@ -17,5 +17,13 @@
     "mongoose": "^5.13.3"
   },
   "devDependencies": {},
-  "description": ""
+  "description": "This is a todo-list app developed in MERN Stack.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alsoamit/todo-list-app-mern-stack.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alsoamit/todo-list-app-mern-stack/issues"
+  },
+  "homepage": "https://github.com/alsoamit/todo-list-app-mern-stack#readme"
 }

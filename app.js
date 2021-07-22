@@ -23,7 +23,7 @@ connection.once("open", () => {
     console.log("Connected to mongodb");
 });
 
-app.get("/", (req, res) => {
+app.get("/todos", (req, res) => {
     Todo.find()
         .then((todos) => res.json(todos))
         .catch((err) => res.status(400).json("Error " + err));

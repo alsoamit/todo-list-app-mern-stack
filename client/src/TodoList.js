@@ -14,40 +14,35 @@ export default function TodoList() {
     fetchTodos();
   }, []);
 
-  const onDelete = async (id) => {
-    await deleteTodo(id);
+  const onDelete = (id) => {
+    deleteTodo(id);
     fetchTodos();
   };
 
   return (
     <div className="container">
-      <h2> TodoList </h2>
-      <table>
-        <thead>
-          <tr>
-            <th> Text </th>
-            <th> Action </th>
-          </tr>
-        </thead>
-        <tbody>
+      <h1> TodoList </h1>
+      <main>
           {todoItems.map((todo) => {
             if (!todo.text) return;
             return (
-              <tr key={todo._id}>
-                <td> {todo.text} </td>
-                <Link to={`/edit/${todo._id}`}> Edit </Link>
+              <div className = "todo" key={todo._id}>
+                <div className="text"> {todo.text} </div>
+                <Link to={`/edit/${todo._id}`}>
+                 <button className="btn_primary">Edit</button> 
+                 </Link>
                 <button
+                className = "btn_primary err"
                   onClick={() => {
                     onDelete(todo._id);
                   }}
                 >
                   Delete
                 </button>
-              </tr>
+              </div>
             );
           })}
-        </tbody>
-      </table>
+      </main>
     </div>
   );
 }

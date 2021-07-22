@@ -29,8 +29,8 @@ export const updateTodo = (data, id) =>
     });
 
 // Delete a todo
-export const deleteTodo = (id) =>
-    fetch(`/todos/delete/${id}`, {
+export const deleteTodo = async (id) =>
+    await fetch(`/todos/delete/${id}`, {
         method: "POST",
         headers: {
             Accept: "application/json",

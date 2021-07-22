@@ -68,13 +68,17 @@ app.post("/todos/:id", (req, res) => {
     });
 });
 
-// route to update an individual todo
+// route to delete an individual todo
 app.post("/todos/delete/:id", (req, res) => {
     const id = req.params.id;
-    Todo.findOneAndDelete({ _id: id }, function(err) {
-        if (err) console.log(err);
-        console.log("Successful deletion");
-    });
+    Todo.findOneAndDelete({_id: id }, function (err, docs) {
+    if (err){
+        console.log(err)
+    }
+    else{
+        console.log("Deleted User : ", docs);
+    }
+});
 });
 
 // heroku 

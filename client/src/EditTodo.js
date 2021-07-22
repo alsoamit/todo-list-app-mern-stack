@@ -17,7 +17,6 @@ export default function EditTodo() {
 
   const handleChange = (e) => {
     setTodoPreload(e.target.value);
-    console.log(e.target.value);
   };
 
   const onSave = async (e) => {
@@ -27,18 +26,17 @@ export default function EditTodo() {
   };
 
   return (
-    <div className="container">
-      <h2> Edit the Todo </h2>
-      <label>
-        Name:
-        <input
+    <div className="edit-todo">
+      <h1> Edit the Todo </h1>
+      <div className="inputBox">
+        <textarea
           type="text"
           name="name"
           value={todoPreload}
           onChange={handleChange}
         />
-      </label>
-      <button onClick={onSave}> Save </button>
+      <button className="btn_primary" onClick={onSave}> Save </button>
+        </div>
     </div>
   );
 }

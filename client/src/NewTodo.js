@@ -19,18 +19,18 @@ export default function NewTodo() {
   };
 
   return (
-    <div className="container">
-      <h2> Create a New Todo </h2>
-      <label>
-        Name:
-        <input
+    <div className="create-todo">
+      <h1> Create a New Todo </h1>
+      <div className="inputBox">
+        <textarea
+        placeholder = "Write from Here"
           type="text"
           name="name"
           value={todoInput}
           onChange={handleChange}
         />
-      </label>
-      <button onClick={saveTodo}> Create Todo </button>
+      <button className = "btn_primary" onClick={saveTodo}> Save Todo </button>
+      </div>
     </div>
   );
 }

@@ -7,10 +7,8 @@ export default function App() {
   return (
     <div>
       <nav>
-        <ul>
-          <Link to="/">Todos</Link>
-          <Link to="/create">New Todo</Link>
-        </ul>
+          <Link className="home" to="/">Home</Link>
+          <Link className="btn_primary" to="/create">Create Todo</Link>
       </nav>
       <Switch>
         <Route exact path="/" component={TodoList} />

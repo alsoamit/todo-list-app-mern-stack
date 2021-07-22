@@ -4,11 +4,11 @@ export const getTodos = () =>
 
 // Fetch a single todo
 export const getTodo = (id) =>
-    fetch(`/${id}`).then((res) => res.json());
+    fetch(`/todos/${id}`).then((res) => res.json());
 
 // Create a todo
 export const createTodo = (data) =>
-    fetch("http://localhost:5000/create", {
+    fetch("/todos/create", {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -19,7 +19,7 @@ export const createTodo = (data) =>
 
 // Update a todo
 export const updateTodo = (data, id) =>
-    fetch(`/${id}`, {
+    fetch(`/todos/${id}`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -30,7 +30,7 @@ export const updateTodo = (data, id) =>
 
 // Delete a todo
 export const deleteTodo = (id) =>
-    fetch(`http://localhost:5000/${id}`, {
+    fetch(`/todos/delete/${id}`, {
         method: "POST",
         headers: {
             Accept: "application/json",

@@ -30,7 +30,7 @@ app.get("/todos", (req, res) => {
 });
 
 // route to create a todo
-app.post("/create", (req, res) => {
+app.post("/todos/create", (req, res) => {
     const todo = new Todo(req.body);
     todo
         .save()
@@ -43,7 +43,7 @@ app.post("/create", (req, res) => {
 });
 
 // route to fetch an individual todo
-app.get("/:id", (req, res) => {
+app.get("/todos/:id", (req, res) => {
     const id = req.params.id;
     Todo.findById(id, (err, todo) => {
         res.json(todo);
@@ -51,7 +51,7 @@ app.get("/:id", (req, res) => {
 });
 
 // route to update an individual todo
-app.post("/:id", (req, res) => {
+app.post("/todos/:id", (req, res) => {
     const id = req.params.id;
     Todo.findById(id, (err, todo) => {
         if (!todo) {
@@ -69,7 +69,7 @@ app.post("/:id", (req, res) => {
 });
 
 // route to update an individual todo
-app.post("delete/:id", (req, res) => {
+app.post("/todos/delete/:id", (req, res) => {
     const id = req.params.id;
     Todo.findOneAndDelete({ _id: id }, function(err) {
         if (err) console.log(err);
